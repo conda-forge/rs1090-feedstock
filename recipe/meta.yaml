@@ -14,11 +14,12 @@ build:
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('rust') }}
     - cargo-bundle-licenses
   host:
@@ -29,7 +30,6 @@ requirements:
     - python
     - pandas >=2.2.0
     - typing_extensions >=4.10.0
-    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
 
 test:
   imports:
