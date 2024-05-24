@@ -1,5 +1,5 @@
 {% set name = "rs1090" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/rs1090-{{ version }}.tar.gz
-  sha256: 8122c8a2a476d788f97583bb8902afc8a7c76ec4d82992f24910940029d7e95b
+  sha256: 88cbb6bb2185bdbccf1648bd41b8e10426456d2e99066c70f5bc13ae7010a7dd
 
 build:
   skip: true  # [py<39 or python_impl == 'pypy']
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 0
 
 requirements:
   build:
@@ -45,7 +45,7 @@ about:
   license: MIT
   license_file:
     - license.md
-    - THIRDPARTY.yml 
+    - THIRDPARTY.yml
 
 extra:
   recipe-maintainers:
