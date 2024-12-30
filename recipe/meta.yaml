@@ -1,5 +1,5 @@
 {% set name = "rs1090" %}
-{% set version = "0.4.1" %}
+{% set version = "0.4.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/rs1090-{{ version }}.tar.gz
-  sha256: b1c9a4895b6b8055d6f57fb9fa48ca292d8a73aa67c50b5f5a79de527a006b86
+  sha256: 6f84187128b206e31dbba3ed1daac1e2bab7b4fae7042ef719ffa5bd84053897
 
 build:
-  skip: true  # [py<39 or python_impl == 'pypy']
+  skip: true  # [py<310 or python_impl == 'pypy']
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vv
