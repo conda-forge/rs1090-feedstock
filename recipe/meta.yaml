@@ -10,11 +10,11 @@ source:
   sha256: a59b82d43b806a5663364f7100ebaa1cd34eef4b545fd1fe944789ac570bff89
 
 build:
-  skip: true  # [py<310 or python_impl == 'pypy']
+  skip: true  # [py<310 or python_impl == 'pypy' or free_threaded_python]
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   build:
