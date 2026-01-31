@@ -1,5 +1,5 @@
 {% set name = "rs1090" %}
-{% set version = "0.5.0" %}
+{% set version = "0.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/rs1090-{{ version }}.tar.gz
-  sha256: a59b82d43b806a5663364f7100ebaa1cd34eef4b545fd1fe944789ac570bff89
+  sha256: 35ad58b9fc190da3f139f3423eab75d803408e52af2bec3c70a11fc39e18184e
 
 build:
   skip: true  # [py<310 or python_impl == 'pypy' or free_threaded_python]
