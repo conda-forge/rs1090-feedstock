@@ -10,7 +10,7 @@ source:
   sha256: e65067a794997dd851458081a43db019d042e69b1d9d561775ccea8df612a4a4
 
 build:
-  skip: true  # [py<310 or python_impl == 'pypy' or free_threaded_python]
+  skip: true  # [py<310 or python_impl == 'pypy' or is_freethreading]
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vv
