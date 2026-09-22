@@ -1,5 +1,5 @@
 {% set name = "rs1090" %}
-{% set version = "0.6.0" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/rs1090-{{ version }}.tar.gz
-  sha256: ac5e69b85a15a93735de7e3df20536983ebe18f025ddc15c7eac35679a7c61d4
+  sha256: 8e50aad0f4f5ce5888b4ee57e12fc1defb699000d478047b5a08139462f49b37
 
 build:
   skip: true  # [py<310 or python_impl == 'pypy' or free_threaded_python]
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   build:
