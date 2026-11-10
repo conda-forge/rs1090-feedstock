@@ -1,5 +1,5 @@
 {% set name = "rs1090" %}
-{% set version = "0.8.0" %}
+{% set version = "0.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/rs1090-{{ version }}.tar.gz
-  sha256: d7d49cae86aea2934cb5f8868c4707372ad236570f13864a3b1c18d7b9bc2523
+  sha256: 5cfe2bebed28d0086d72730e5ffeb44f5d0fba95898e9df3250ab62e07158d84
 
 build:
   skip: true  # [py<310 or python_impl == 'pypy' or free_threaded_python]
